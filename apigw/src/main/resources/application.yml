@@ -1,0 +1,38 @@
+server:
+    port: 8083
+jwt:
+  secretKey: securesecuresecuresecuresecuresecuresecure
+  tokenPrefix: Bearer
+
+spring:
+    application:
+        name: api-gateway
+    main:
+      web-application-type: reactive
+#    cloud:
+#       gateway:
+#          routes:
+#            - id: customer
+#              uri: lb://CUSTOMER
+#              filter:
+#              predicates:
+#                - Path=/customer/**
+#            - id: book
+#              uri: lb://BOOK
+#              predicates:
+#                - Path=/book/**
+#            - id: order
+#              uri: lb://ORDER
+#              predicates:
+#                - Path=/order/**
+#            - id: statistics
+#              uri: lb://STATISTICS
+#              predicates:
+#                - Path=/statistics/**
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka
+        fetch-registry: true
+        register-with-eureka: true
